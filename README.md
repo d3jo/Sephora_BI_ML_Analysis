@@ -15,4 +15,4 @@ Some sample business insights:
 2. What are some "hidden gem" products that need to be promoted for advertisements?
 
    20 Items were listed which received a high rating and numerous hearts but had few to no reviews.
-![Alt_text](KakaoTalk_20250901_182022894.png)0
+![Alt_text](KakaoTalk_20250901_182022894.png)

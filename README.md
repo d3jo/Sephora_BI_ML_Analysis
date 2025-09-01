@@ -16,3 +16,4 @@ Some sample business insights:
 
    20 Items were listed which received a high rating and numerous hearts but had few to no reviews.
 ![Alt_text](KakaoTalk_20250901_182022894.png)
+

@@ -1,0 +1,20 @@
+COPY products
+FROM 'C:/Users/User/OneDrive/Github/sql-product-analytics/product_info.csv'
+WITH (FORMAT csv, HEADER true, DELIMITER ',', QUOTE '"');
+
+
+-- Data Quality Check
+
+select count(*) as rows,
+	min(price_usd) as min_price, max(price_usd) as max_price
+	min(rating)    as min_rating,max(rating)    as max_rating
+
+from products;
+
+
+select
+	sum((product_id is null)::int)	as miss_product_id,
+	sum((brand_name is null)::int)	as miss_brand,
+	sum((primary_category is null)::int)	as miss_category,
+	sum((price_usd is null)::int)	as miss_rate,
+	sum((rating is null)::int)	as miss_rating

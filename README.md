@@ -14,6 +14,6 @@
 
 **2. What are some "hidden gem" products that need to be promoted for advertisements?**
 
-   20 Items which received a high rating and many hearts but had few to no reviews were listed
+   20 Items which received a high rating and many hearts but had only a few reviews were listed
 ![Alt_text](KakaoTalk_20250901_182022894.png)
 

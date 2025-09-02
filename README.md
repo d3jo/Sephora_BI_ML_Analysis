@@ -1,5 +1,5 @@
 # sephora-sql-bi
-**A BI analysis of online Sephora products by taking raw data into an actionable business insight.**
+**A business sales analysis of online Sephora products by taking raw data into an actionable business insight.**
 
 
 

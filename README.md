@@ -19,5 +19,5 @@
 
 
 
-** A pie chart representing the proportion of the top 10 brands in Sephora **
+**A pie chart representing the proportion of the top 10 brands in Sephora**
 ![Alt_text](KakaoTalk_20250902_114848783.png)

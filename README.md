@@ -17,3 +17,7 @@
    High rating items that received many hearts but only had few reviews.
 ![Alt_text](KakaoTalk_20250902_110110266.png)
 
+
+
+** A pie chart representing the proportion of the top 10 brands in Sephora **
+![Alt_text](KakaoTalk_20250902_114848783.png)

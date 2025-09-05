@@ -45,30 +45,33 @@
 
 ---
 
-2. **Features Used**
-   - **Numeric:** `price_usd`, `sale_price_usd`, `loves_count`  
-   - **Categorical:** `brand_name`, `primary_category`
+2. **Features Used (No Direct Leakage)**
+   - To avoid the model simply memorizing the label definition, we do **not include `rating` or `reviews` as features**.  
+   - Instead, we use **proxy variables** that capture product popularity and brand/category effects indirectly:  
+     - **Numeric:** `price_usd`, `sale_price_usd`, `loves_count`  
+     - **Categorical:** `brand_name`, `primary_category`  
+   - These features allow the model to learn correlations between product characteristics, engagement, and hidden gem potential without directly repeating the label rule.
 
 ---
 
-3. **Preprocessing Pipelines**
-   - **Numeric pipeline:**  
-     - Missing values → filled with median (`SimpleImputer(strategy="median")`)  
-     - Standardized (mean 0, variance 1) for stability  
-   - **Categorical pipeline:**  
-     - Missing values → filled with most frequent  
-     - Encoded as one-hot vectors (`OneHotEncoder`)  
-   → `ColumnTransformer` applies each pipeline to the correct set of columns.
 
+3. **Why Excluding `rating` and `reviews` Matters**
+   - If we fed `rating` or `reviews` into the model, it would trivially rediscover the hidden gem rule and give artificially high performance (data leakage).  
+   - By using **indirect signals (price, discount, hearts, brand, category)**, the model instead generalizes patterns of what *type of product tends to become a hidden gem*.  
+   - This makes the model useful for **new products without many reviews**, where the hidden gem label cannot be computed directly.
 ---
 
 4. **Model**
    - `XGBClassifier` (gradient boosting decision trees).  
-   - XGBoost handles complex interactions well, especially with mix of numeric + categorical data.
+   - Handles nonlinear interactions between numeric and categorical features well.  
+   - Example patterns it can learn:
+     - Certain brands consistently produce high-rated products.  
+     - Products with many “loves” but low discount → higher likelihood of being hidden gems.  
+     - Categories like “Fragrance” vs “Skincare” may differ in visibility.
 
 ---
 
 5. **Train/Test Split**
-   - 80% train, 20% test.  
-   - `model.fit()` trains on training data (`X_train, y_train`).  
-   - Predictions are compared with `y_test` to evaluate performance.  
+   - 80% training, 20% test.   
+
+---

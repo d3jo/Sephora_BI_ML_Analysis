@@ -78,5 +78,5 @@
 
    - 80% training, 20% test datasets.
    - The model predicts 89% True negatives, 99% false negatives, 54% true positives and 12% false positives correctly.
-
+      *We have significantly lower performance on true hidden gems because of the imbalance of data. Only ~12% are hidden gems data.
 ---

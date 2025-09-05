@@ -173,6 +173,6 @@
      - Price and adjusted gem score.  
    - The **Top 50** products with the highest scores are highlighted as candidates for **marketing focus and promotional campaigns**.
   
-     [!Alt_text](Results/KakaoTalk_20250905_135315831.png)
+     ![Alt_text](Results/KakaoTalk_20250905_135315831.png)
 
 ---

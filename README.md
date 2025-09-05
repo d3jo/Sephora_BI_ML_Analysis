@@ -1,4 +1,4 @@
-# sephora-sql-bi
+# Sephora Product Business & ML Analysis
 **A business sales analysis of online Sephora products by taking raw data into an actionable business insight.**
 
 

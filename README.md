@@ -2,7 +2,7 @@
 **A business sales analysis of online Sephora products by taking raw data into an actionable business insight.**
 
 
-
+<h1>Business Intelligence</h1>
 
 **Some sample business insights:**
 
@@ -24,3 +24,6 @@
 
 **A pie chart representing the proportion of the top 10 brands in Sephora**
 ![Alt_text](Results/KakaoTalk_20250902_114848783.png)
+
+
+<h1>Machine Learning</h1>

@@ -2,6 +2,39 @@
 
 **A business sales analysis and application of ML of online Sephora products by taking raw data into an actionable business insight.**
 
+
+---
+## Data Attributes
+   - Product ID
+   - Product Name
+   - Brand ID
+   - Brand Name
+   - Loves Count
+   - Rating
+   - Reviews
+   - Size
+   - Variation Type
+   - Variation Value
+   - Variation Desc
+   - Ingredients
+   - Price USD
+   - Value Price USD
+   - Sale Price USD
+   - Limited Edition
+   - New
+   - Online Only
+   - Out of Stock
+   - Sephora Exclusive
+   - Highlights
+   - Primary Category
+   - Secondary category
+   - Tertiary Category
+   - Child Count
+   - Child Max price
+   - Child Min price
+---
+
+
 ---
 
 ## 📊 Business Intelligence

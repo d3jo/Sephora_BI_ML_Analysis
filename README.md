@@ -72,6 +72,8 @@
 ---
 
 5. **Train/Test Split**
-   - 80% training, 20% test.   
+   - 80% training, 20% test.
+     ![Alt_text](Results/KakaoTalk_20250905_121559271.png)
+   - The model predicts 89% True negatives, 99% false negatives, 54% true positives and 12% false positives correctly.
 
 ---

@@ -116,3 +116,61 @@
    
       **We have significantly low performance on true hidden gems because of the imbalance of data. Only ~12% of the data are hidden gems data**
 ---
+
+### 🔹 Popularity Predictor Model   |   Supervised Regression + Composite Ranking  
+
+**This model is useful for determining whether the new product will gain popularity from customers, providing insights of potential of new item.**
+
+---
+
+1. **Target Definition (`gem_score`)**
+   - Instead of a binary label, we define a **continuous composite score** that captures the hidden gem concept:  
+     - **High predicted quality** → product should have a strong rating.  
+     - **Low actual traction** → fewer loves/reviews than expected.  
+     - **Affordable price** → relatively cheaper than peers.  
+   - Formula (category-normalized z-scores):  
+     ```
+     gem_score = 1.2 * z(predicted_rating) 
+               + 0.8 * (z(predicted_loves) - z(actual_loves)) 
+               - 0.4 * z(price)
+     ```
+   → Products with higher `gem_score` are surfaced as **hidden gems**.
+
+---
+
+2. **Features Used**
+   - To generate predictions, we train **two regressors**:  
+     - **Rating Regressor** → predicts expected rating from product attributes.  
+     - **Popularity Regressor** → predicts expected loves_count (popularity).  
+   - Features include:  
+     - **Numeric:** `price_usd`, `sale_price_usd`, `value_price_usd`, `child_min_price`, `child_max_price`, `child_count`  
+     - **Categorical:** `brand_name`, `primary_category`, `secondary_category`  
+     - **Text:** `ingredients` (vectorized with TF-IDF)  
+
+---
+
+3. **Why This Approach Matters**
+   - Binary classification would simply replicate the labeling rule (reviews < 50, rating ≥ threshold).  
+   - By using regression and combining predictions into a score, the model can:  
+     - Rank all products on a **continuous scale of hidden gem potential**.  
+     - Identify products that *should* be popular (based on attributes) but aren’t yet.  
+     - Generalize to **new products** with no reviews or loves_count.  
+
+---
+
+4. **Model**
+   - Base regressors: `XGBRegressor` (gradient boosting decision trees).  
+   - Handles both numerical and categorical interactions effectively.  
+   - The two regression outputs (`pred_rating`, `pred_loves`) are blended with actual traction and price to compute `gem_score`.  
+
+---
+
+5. **Results**
+   - The output is a ranked DataFrame of products, sorted by `gem_score`.  
+   - Example columns include:  
+     - Predicted rating vs. actual rating.  
+     - Predicted loves vs. actual loves.  
+     - Price and adjusted gem score.  
+   - The **Top 50** products with the highest scores are highlighted as candidates for **marketing focus and promotional campaigns**.
+
+---

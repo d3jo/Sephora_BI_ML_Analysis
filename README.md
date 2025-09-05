@@ -30,7 +30,45 @@
    ![Top Brands](Results/KakaoTalk_20250902_114848783.png)
 
 ---
-<h1>Machine Learning</h1>
 
 
-**1. Hidden Gem? Predictor Model**
+## 🤖 Machine Learning
+
+### 🔹 Hidden Gem Predictor Model
+
+1. **Label Creation (`hidden_gem`)**
+   - A product is labeled as **1 (hidden gem)** if:  
+     - Rating ≥ 4.4 (good quality)  
+     - Number of reviews < 50 (low visibility)  
+   - Otherwise, it’s **0 (not hidden gem)**.  
+   → This turns your dataset into a **binary classification problem**.
+
+---
+
+2. **Features Used**
+   - **Numeric:** `price_usd`, `sale_price_usd`, `loves_count`  
+   - **Categorical:** `brand_name`, `primary_category`
+
+---
+
+3. **Preprocessing Pipelines**
+   - **Numeric pipeline:**  
+     - Missing values → filled with median (`SimpleImputer(strategy="median")`)  
+     - Standardized (mean 0, variance 1) for stability  
+   - **Categorical pipeline:**  
+     - Missing values → filled with most frequent  
+     - Encoded as one-hot vectors (`OneHotEncoder`)  
+   → `ColumnTransformer` applies each pipeline to the correct set of columns.
+
+---
+
+4. **Model**
+   - `XGBClassifier` (gradient boosting decision trees).  
+   - XGBoost handles complex interactions well, especially with mix of numeric + categorical data.
+
+---
+
+5. **Train/Test Split**
+   - 80% train, 20% test.  
+   - `model.fit()` trains on training data (`X_train, y_train`).  
+   - Predictions are compared with `y_test` to evaluate performance.  

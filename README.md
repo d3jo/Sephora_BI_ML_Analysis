@@ -36,6 +36,8 @@
 
 ### 🔹 Hidden Gem Predictor Model
 
+**This model can be potentially useful when determining which items will have a marketing value**
+
 1. **Label Creation (`hidden_gem`)**
    - A product is labeled as **1 (hidden gem)** if:  
      - Rating ≥ 4.4 (good quality)  

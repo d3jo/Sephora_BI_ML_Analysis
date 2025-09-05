@@ -72,6 +72,8 @@
 ---
 
 5. **Train/Test Split**
+
+   
      ![Alt_text](Results/KakaoTalk_20250905_121559271.png)
 
    - 80% training, 20% test datasets.

@@ -1,5 +1,5 @@
 # Sephora Product Business & ML Analysis
-**A business sales analysis of online Sephora products by taking raw data into an actionable business insight.**
+**A business sales analysis and application of ML of online Sephora products by taking raw data into an actionable business insight.**
 
 
 <h1>Business Intelligence</h1>

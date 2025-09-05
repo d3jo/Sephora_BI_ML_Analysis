@@ -119,7 +119,7 @@
 
 ### 🔹 Popularity Predictor Model   |   Supervised Regression + Composite Ranking  
 
-**This model is useful for determining whether the new product will gain popularity from customers, providing insights of potential of new item.**
+**This model is useful for estimating whether a new product will gain popularity**
 
 ---
 

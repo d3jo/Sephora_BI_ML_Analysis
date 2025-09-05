@@ -34,7 +34,7 @@
 
 ## 🤖 Machine Learning
 
-### 🔹 Hidden Gem Predictor Model
+### 🔹 Hidden Gem Predictor Model   |   Supervised Classification
 
 **This model can be potentially useful when determining which items will have a marketing value**
 
